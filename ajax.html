@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Demo</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        line-height: 1.5em;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Crash Course - AJAX</h1>
+    </header>
+    <div id="container">
+      <form action="post" id="form">
+        <input type="text" placeholder="username" id="username" />
+        <button type="submit">POST</button>
+      </form>
+      <div id="result"></div>
+    </div>
+    <script>
+      // load file
+      //   $("#result").load("effects.html");
+      //   $("#result").load("effects.html", function (response, status, xhr) {
+      //     alert(status); // success, error
+      //   });
+
+      // get
+      //   $.get("effects.html", function (data) {
+      //     alert(data);
+      //   });
+
+      // JSON
+      //   $.getJSON("data.json", function (data) {
+      //     $.each(data, function (i, user) {
+      //       $("#result").append(`<li>${user.firstName}</li>`);
+      //     });
+      //   });
+
+      // GET
+      $.ajax({
+        method: "GET",
+        url: "https://jsonplaceholder.typicode.com/users",
+        dataType: "json",
+      }).done(function (data) {
+        console.log(data);
+        $.map(data, function (user, i) {
+          $("#result").append(`<li>${user.username}</li>`);
+        });
+      });
+
+      // POST
+      $("#form").submit(function (e) {
+        e.preventDefault();
+        let username = $("#username").val();
+        $.post("https://jsonplaceholder.typicode.com/users", { username: username }).done(function (
+          data
+        ) {
+          alert(`posted: ${data.username}`);
+          $("#username").val("");
+        });
+      });
+    </script>
+  </body>
+</html>

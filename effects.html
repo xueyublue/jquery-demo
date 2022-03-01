@@ -30,9 +30,23 @@
         margin: auto;
         padding: 10px;
       }
-      .pStyle {
-        color: red;
-        background: white;
+      #div {
+        background: #333;
+        color: white;
+        width: 500px;
+        height: 90px;
+        padding: 40px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      #div2 {
+        background: red;
+        width: 90px;
+        height: 90px;
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 10px;
       }
     </style>
   </head>
@@ -40,7 +54,90 @@
     <header>
       <h1>jQuery Crash Course - Effects and Animation</h1>
     </header>
-    <div id="container"></div>
-    <script></script>
+    <div id="container">
+      <button id="btnStop">Stop</button>
+      |
+      <button id="btnFadeIn">Fade In</button>
+      <button id="btnFadeOut">Fade Out</button>
+      <button id="btnFadeToggle">Fade Toggle</button>
+      |
+      <button id="btnSlideUp">Slide Up</button>
+      <button id="btnSlideDown">Slide Down</button>
+      <button id="btnSlideToggle">Slide Toggle</button>
+      <div id="div">
+        <h1>Hello World</h1>
+      </div>
+      <button id="btnMoveLeft">Move Left</button>
+      <button id="btnMoveRight">Move Right</button>
+      <button id="btnMoveAround">Move Around</button>
+      <div id="div2"></div>
+    </div>
+    <script>
+      $("#btnStop").click(function () {
+        $("#div").stop();
+      });
+
+      // Fade
+      $("#btnFadeIn").click(function () {
+        $("#div").fadeIn();
+      });
+      $("#btnFadeOut").click(function () {
+        // $("#div").fadeOut();
+        // $("#div").fadeOut(2000);
+        // $("#div").fadeOut("slow");
+        $("#div").fadeOut(2000, function () {
+          console.log("Faded Out.");
+        });
+      });
+      $("#btnFadeToggle").click(function () {
+        $("#div").fadeToggle(200);
+      });
+
+      // Slide
+      $("#btnSlideUp").click(function () {
+        $("#div").slideUp();
+      });
+      $("#btnSlideDown").click(function () {
+        $("#div").slideDown();
+      });
+      $("#btnSlideToggle").click(function () {
+        $("#div").slideToggle();
+      });
+
+      // Move
+      $("#btnMoveRight").click(function () {
+        $("#div2").animate({
+          left: 500,
+          height: "200px",
+          width: "200px",
+          opacity: 0.5,
+        });
+      });
+      $("#btnMoveLeft").click(function () {
+        $("#div2").animate({
+          left: 0,
+          height: "100px",
+          width: "100px",
+          opacity: 1,
+        });
+      });
+      $("#btnMoveAround").click(function () {
+        let div = $("#div2");
+        div.animate({
+          left: 100,
+        });
+        div.animate({
+          top: 100,
+        });
+        div.animate({
+          left: 0,
+          top: 100,
+        });
+        div.animate({
+          left: 0,
+          top: 0,
+        });
+      });
+    </script>
   </body>
 </html>
