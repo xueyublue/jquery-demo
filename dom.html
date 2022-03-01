@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Demo</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-size: 17px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
+        line-height: 1.5em;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+      .pStyle {
+        color: red;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Crash Course - DOM Manipulation</h1>
+    </header>
+    <div id="container">
+      <button id="btn1">Button 1</button>
+      <p id="p1">
+        [P1] Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quae rem, quasi
+        distinctio nobis est assumenda quaerat laudantium, quam provident blanditiis amet molestiae
+        iusto praesentium sed necessitatibus ipsam obcaecati sequi.
+      </p>
+      <p id="p2">
+        [P2] Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae sint molestias
+        provident repellat nemo a distinctio nisi modi magni aspernatur, voluptatum, recusandae quod
+        quae, quasi rem explicabo. Repellendus, recusandae exercitationem.
+      </p>
+
+      <input type="text" id="newItem" />
+      <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+
+      <div id="div"></div>
+
+      <a href="http://google.com">Google</a>
+
+      <ul id="users"></ul>
+    </div>
+    <script>
+      // CSS
+      //   $("#p1").css("color", "red");
+      //   $("#p1").css({ color: "red", background: "white" });
+      //   $("#p2").addClass("pStyle");
+      //   $("#p2").removeClass("pStyle");
+      //   $("#btn1").click(function () {
+      //     $("#p2").toggleClass("pStyle");
+      //   });
+
+      // HTML
+      //   $("#div").text("Hello World!");
+      //   $("#div").html("<small>Hello World!</small>");
+
+      //   $("#list").prepend("<li>Item 0</li>");
+      //   $("#list").append("<li>Item 4</li>");
+
+      //   $("#p1").appendTo("#p2");
+      //   $("#p1").prependTo("#p2");
+
+      //   $("#list").before("<p>List Start</p>");
+      //   $("#list").after("<p>List End</p>");
+      //   $("#list").empty();
+      //   $("#list").detach();
+
+      //   $("a").attr("target", "_blank");
+      //   console.log($("a").attr("href"));
+      //   $("a").removeAttr("target");
+
+      //   $("#p1").wrap("<h3>");
+      //   $("p").wrapAll("<h3>");
+
+      // add new item to list upon input enter key event
+      //   $("#newItem").keyup(function (e) {
+      //     let code = e.which;
+      //     if (code == 13) {
+      //       e.preventDefault();
+      //       $("#list").append("<li>" + e.currentTarget.value + "</li>");
+      //       $("#newItem").val("");
+      //     }
+      //   });
+
+      // load array data to list
+      var userList = ["User 1", "User 2"];
+      $.each(userList, function (i, user) {
+        $("#users").append(`<li>${user}</li>`);
+      });
+    </script>
+  </body>
+</html>

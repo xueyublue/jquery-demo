@@ -40,68 +40,106 @@
       <button id="btn1" class="btn">Button 1</button>
       <button id="btn2">Button 2</button>
       <p id="p1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam consequuntur tempora tempore voluptas repellendus, vel
-        voluptate deleniti et temporibus porro necessitatibus consequatur ipsum ullam ad repudiandae! Dignissimos, illum modi!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magnam consequuntur tempora
+        tempore voluptas repellendus, vel voluptate deleniti et temporibus porro necessitatibus
+        consequatur ipsum ullam ad repudiandae! Dignissimos, illum modi!
       </p>
       <h2 id="location">Mouse Location: X=?, Y=?</h2>
       <hr />
-      <script>
-        // $(document).ready(function () {
-        // });
 
-        // display alert
-        // $("#btn1").click(function (e) {
-        //   console.log(e);
-        //   alert(e.currentTarget.innerHTML + " clicked (class name: " + e.currentTarget.className + ").");
-        // });
-        // $("#btn1").on("click", function () {
-        //   alert("*Button 1 clicked.");
-        // });
-
-        // hide and show
-        // $("#btn1").on("click", function () {
-        //   $("#p1").hide();
-        // });
-        // $("#btn2").on("click", function () {
-        //   $("#p1").show();
-        // });
-
-        // toggle
-        // $("#btn1").on("click", function () {
-        //   $("#p1").toggle();
-        // });
-
-        // double click
-        // $("#btn1").on("dblclick", function () {
-        //   $("#p1").toggle();
-        // });
-
-        // hover
-        // $("#btn1").on("mouseenter", function () {
-        //   $("#p1").toggle();
-        // });
-        // $("#btn1").on("mouseleave", function () {
-        //   $("#p1").toggle();
-        // });
-
-        // mouse move
-        // $("#btn1").on("mousemove", function (e) {
-        //   // $("#p1").toggle();
-        //   console.log("X: " + e.clientX + ", Y: " + e.clientY);
-        // });
-        // $(document).on("mousemove", function (e) {
-        //   console.log("Mouse Location: X=" + e.clientX + ", Y=" + e.clientY);
-        //   $("#location").html("Mouse Location: X=" + e.clientX + ", Y=" + e.clientY);
-        // });
-
-        // mouse down and up
-        // $("#btn1").on("mousedown", function () {
-        //   $("#p1").toggle();
-        // });
-        // $("#btn1").on("mouseup", function () {
-        //   $("#p1").toggle();
-        // });
-      </script>
+      <form id="form">
+        <label for="name">Name</label><br /><input type="text" id="name" name="name" /><br />
+        <label for="email">Email</label><br /><input type="text" id="email" name="email" /><br />
+        <label for="gender">Gender</label><br />
+        <select name="gender" id="gender">
+          <option value="male">male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
     </div>
+
+    <script>
+      /* $(document).ready(function () {
+        }); */
+
+      // display alert
+      /* $("#btn1").click(function (e) {
+          console.log(e);
+          alert(e.currentTarget.innerHTML + " clicked (class name: " + e.currentTarget.className + ").");
+        });
+        $("#btn1").on("click", function () {
+          alert("*Button 1 clicked.");
+        }); */
+
+      // hide and show
+      /* $("#btn1").on("click", function () {
+          $("#p1").hide();
+        });
+        $("#btn2").on("click", function () {
+          $("#p1").show();
+        }); */
+
+      // toggle
+      /* $("#btn1").on("click", function () {
+          $("#p1").toggle();
+        }); */
+
+      // double click
+      /* $("#btn1").on("dblclick", function () {
+          $("#p1").toggle();
+        }); */
+
+      // hover
+      /* $("#btn1").on("mouseenter", function () {
+          $("#p1").toggle();
+        });
+        $("#btn1").on("mouseleave", function () {
+          $("#p1").toggle();
+        }); */
+
+      // mouse move
+      /* $("#btn1").on("mousemove", function (e) {
+          // $("#p1").toggle();
+          console.log("X: " + e.clientX + ", Y: " + e.clientY);
+        });
+        $(document).on("mousemove", function (e) {
+          console.log("Mouse Location: X=" + e.clientX + ", Y=" + e.clientY);
+          $("#location").html("Mouse Location: X=" + e.clientX + ", Y=" + e.clientY);
+        }); */
+
+      // mouse down and up
+      /* $("#btn1").on("mousedown", function () {
+          $("#p1").toggle();
+        });
+        $("#btn1").on("mouseup", function () {
+          $("#p1").toggle();
+        }); */
+
+      // input focus, blur, keyup
+      /* $("input").focus(function () {
+          $(this).css("background", "lightgreen");
+        });
+        $("input").blur(function () {
+          $(this).css("background", "white");
+        });
+        $("input").keyup(function (e) {
+          console.log(e.currentTarget.value);
+        }); */
+
+      // select change event
+      /* $("select#gender").change(function (e) {
+          console.log(e.currentTarget.value);
+        }); */
+
+      // form submission
+      /* $("#form").submit(function (e) {
+          e.preventDefault();
+          console.log(
+            `Name: ${$("#name").val()}, Email: ${$("#email").val()}, Gender: ${$("#gender").val()}`
+          );
+        }); */
+    </script>
   </body>
 </html>
