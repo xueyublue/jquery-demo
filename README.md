@@ -3,5 +3,16 @@
 - Selectors
 - Events
 - DOM Manipulation
-- Effects and Annimation
+- Effects 
+  - Fade In
+  - Fade Out
+  - Fade Toggle
+  - Slide Up
+  - Slide Down
+  - Slide Toggle
+- Annimation
 - AJAX
+  - load
+  - get
+  - getJSON
+  - post
