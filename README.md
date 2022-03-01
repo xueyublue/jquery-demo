@@ -1,7 +1,18 @@
 # jQuery Demo Project
 
 - Selectors
+  - By ID
+  - By Class Name
+  - By Tag Name
+  - By Input Type
+  - By Attribute Name
 - Events
+  - Click
+  - Double Click
+  - Move Enter, Leave and Move
+  - Input Focus, Blur and Keyup
+  - Select Change
+  - Form Submission
 - DOM Manipulation
 - Effects 
   - Fade In
